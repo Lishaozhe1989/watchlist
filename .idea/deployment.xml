@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="root@121.89.214.107:22" autoUploadExternalChanges="true">
     <serverData>
       <paths name="root@121.89.214.107:22">
         <serverdata>
@@ -10,6 +10,20 @@
         </serverdata>
       </paths>
       <paths name="root@121.89.214.107:22 (1)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/Flaskproject/watchlist" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@121.89.214.107:22 (2)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/Flaskproject/watchlist" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="watchlist">
         <serverdata>
           <mappings>
             <mapping deploy="/root/Flaskproject/watchlist" local="$PROJECT_DIR$" web="/" />
