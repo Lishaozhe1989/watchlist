@@ -5,28 +5,7 @@
       <paths name="root@121.89.214.107:22">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="root@121.89.214.107:22 (1)">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/root/Flaskproject/watchlist" local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="root@121.89.214.107:22 (2)">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/root/Flaskproject/watchlist" local="$PROJECT_DIR$" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="watchlist">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/root/Flaskproject/watchlist" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/root/Flaskproject/watchlist" local="$PROJECT_DIR$" web="http:///" />
           </mappings>
         </serverdata>
       </paths>
