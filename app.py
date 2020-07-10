@@ -39,10 +39,19 @@ class Movie(db.Model):
     title = db.Column(db.String(64))
     year = db.Column(db.String(4))
 
+@app.cli.command()  # 注册为命令
+@click.option('--drop', is_flag=True, help='Create after drop.')  # 设置选项
+def initdb(drop):
+    """Initialize the database."""
+    if drop:  # 判断是否输入了选项
+        db.drop_all()
+    db.create_all()
+    click.echo('Initialized database.')  # 输出提示信息
+
 @app.cli.command()
 def forge():
     db.create_all()
-    name = "Tom Li"
+    name = 'Tom Li'
     movies = [
         {'title': 'My Neighbor Totoro', 'year': '1988'},
         {'title': 'Dead Poets Society', 'year': '1989'},
@@ -98,8 +107,8 @@ app.config['SECRET_KEY'] = 'dev'
 def edit(movie_id):
     movie = Movie.query.get_or_404(movie_id)
     if request.method == 'POST':
-        title = request.form.get('title')
-        year = request.form.get('year')
+        title = request.form['title']
+        year = request.form['year']
         if not title or not year or len(title) > 64 or len(year) > 4:
             flash('Invalid input.')
             redirect(url_for('edit',movie_id=movie_id))
@@ -132,7 +141,7 @@ def admin(username,password):
         user.set_password(password)
     else:
         click.echo('Creating user...')
-        user = User(username=username,name='Admin')
+        user = User(name='Tom Li',username=username)
         user.set_password(password)
         db.session.add(user)
     db.session.commit()
@@ -157,7 +166,7 @@ def login():
             login_user(user)
             flash('Login success.')
             return redirect(url_for('index'))
-        flash('Invalid username or password')
+        flash('Invalid username or password.')
         return redirect(url_for('login'))
     return render_template('login.html')
 
@@ -168,7 +177,7 @@ def logout():
     flash('Goodbye.')
     return redirect(url_for('index'))
 
-@app.route('/settings/',methods=['GET','POST'])
+@app.route('/settings',methods=['GET','POST'])
 @login_required
 def settings():
     if request.method == 'POST':

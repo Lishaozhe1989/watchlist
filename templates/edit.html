@@ -2,8 +2,8 @@
 {% block content %}
 <h3>Edit item</h3>
 <form method="post">
-    Name <input type="text" name="title" autocomplete="False" required value="{{ movie.title }}">
-    Year <input type="text" name="year" autocomplete="False" required value="{{ movie.year }}">
+    Name <input type="text" name="title" autocomplete="off" required value="{{ movie.title }}">
+    Year <input type="text" name="year" autocomplete="off" required value="{{ movie.year }}">
     <input type="submit" class="btn" name="submit" value="Update">
 </form>
 {% endblock %}

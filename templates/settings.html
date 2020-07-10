@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <form method="post">
-    Your name <input type="text" name="name" required autocomplete="False" value="{{ current_user.name }}">
+    Your Name <input type="text" name="name" required autocomplete="False" value="{{ current_user.name }}">
     <input type="submit" class="btn" name="submit" value="Save">
 </form>
 {% endblock %}
